@@ -1,0 +1,18 @@
+@import "schema_cromatica.css";
+@import "tabel_ecran_mare_mediu.css";
+html{
+    font-size: 14 px;
+}
+
+#grid-pagina{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas: "welcome welcome"
+                         "calendar tabel"
+                         "informatii informatii"
+                         "anunturi lista_utilizatori_online"
+                         "date_site_server utilizator_statistici";
+    padding: 4%;
+    grid-gap: 2rem;
+}
+

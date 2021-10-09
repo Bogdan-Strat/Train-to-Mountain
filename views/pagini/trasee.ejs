@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <meta name="keywords" content="drumetie,trasee montane,munte">
+        <meta name="description" content="Diverse trasee montane din Romania, dar nu numai">
+        <title>Trasee</title>
+
+        <%- include("../fragmente/head") %>
+        <link rel="stylesheet" href="/resurse/css/grid-traseu.css" type="text/css" />
+       <script type="text/javascript" src=/resurse/js/trasee.js></script>
+    </head>
+
+    <body>
+        <%- include("../fragmente/header") %>
+
+        <main>
+            <label> Nume produs: <input type="text" id="inp-nume" value=""></label>
+            <label> Durata: <input type="range" id="inp-durata" value="0" min="0" max="30"></label>
+            <p>Apa pe traseu?</p>
+            <label>Da <input type="radio" id="inp-apa-da" name="inp-apa" value="true"></label>
+            <label>Nu <input type="radio" id="inp-apa-nu" name="inp-apa" value="false"></label>
+            <label>Ambele <input type="radio" id="inp-apa-ambele" name="inp-apa" checked value="false && true"></label>
+            <p>Tipul marcajului: </p>
+            <label>dunga albastra<input type="checkbox" id="inp-marcaj-da" name="inp-marcaj" value="dunga albastra"></label>
+            <label>dunga rosie<input type="checkbox" id="inp-marcaj-dr" name="inp-marcaj" value="dunga rosie"></label>
+            <label>dunga galbena<input type="checkbox" id="inp-marcaj-dg" name="inp-marcaj" value="dunga galbena"></label>
+            <label>triunghi rosu<input type="checkbox" id="inp-marcaj-tr" name="inp-marcaj" value="triunghi rosu"></label>
+            <label>triungi albastru<input type="checkbox" id="inp-marcaj-ta" name="inp-marcaj" value="triunghi albastru"></label>
+            <label>triunghi galben<input type="checkbox" id="inp-marcaj-tg" name="inp-marcaj" value="triunghi galben"></label>
+            <label>cerc rosu<input type="checkbox" id="inp-marcaj-cr" name="inp-marcaj" value="cerc rosu"></label>
+            <label>cerc galben<input type="checkbox" id="inp-marcaj-cg" name="inp-marcaj" value="cerc galben"></label>
+            <label>cerc albastru<input type="checkbox" id="inp-marcaj-ca" name="inp-marcaj" value="cerc albastru"></label>
+            <label>toate<input type="checkbox" id="inp-marcaj-toate" name="inp-marcaj" checked value="dunga albastra,dunga rosie,dunga galbena,
+                triunghi rosu,triunghi albastru,triunghi galben,cerc galben,cerc rosu,cerc albastru"></label>
+            <p><label>Descriere: <textarea id="inp-descriere" value=""></textarea></label></p>
+            <p>Atractii: </p>
+            <label>
+                <select id="inp-atractii">
+                    <option value="toate" selected>toate</option>
+                    <%for(let traseu of locals.trasee){ %>
+                        <option value="<%- traseu.atractii %>"><%- traseu.atractii %></option>
+
+                   <% } %>
+
+                </select>
+            </label>
+            <p><label>
+                Data primei parcurgeri:
+                <select id="inp-data" multiple size="4">
+                    <option id="inp-data-toate" value="toate" selected>toate</option>
+                    <%for(let traseu of locals.trasee){ %>
+                        <option value="<%- traseu.prima_parcurgere %>"><%- traseu.prima_parcurgere %></option>
+
+                   <% } %>
+                </select>
+            </label></p>
+            <button id="filtrare">Filtreaza</button>
+            <button id="sort_cresc">Sorteaza crescator</button>
+            <button id="sort_desc">Sorteaza descrescator</button>
+            <button id="calculare_medie">Calculeaza media de timp pentru un traseu</button>
+            <button id="resetare">Resetare</button>
+
+            <div id="div-medie"></div>
+            <div id="grid">
+            <section>
+                <h3>Trasee</h3>
+                <% for (let traseu of locals.trasee){  %>
+                <article class="traseu">
+                    <h4 class="nume">Nume: <a  href="/trasee/<%- traseu.id %>"><span class="val-nume"><%- traseu.nume%></span></a></h4>
+                    <div id="asezare-traseu">
+                    <table>
+                        <tr class="durata">
+                            <td>Durata:</td>
+                            <td><span class="val-durata"><%- traseu.durata%> </span>ore</td>
+                        </tr>
+
+                        <tr class="marcaj">
+                            <td>Marcaj:</td>
+                            <td><span class="val-marcaj"><%-traseu.marcaj %></span></td>
+                        </tr>
+
+                        <tr class="atractii">
+                            <td>Atractii:</td>
+                            <td><span class="val-atractii"><%- traseu.atractii %></span></td>
+                        </tr>
+
+                        <tr class="data">
+                            <td>Prima parcurgere:</td>
+                            <td><time><span class="val-data"><%- traseu.prima_parcurgere %></span></time></td>
+                        </tr>
+
+                        <tr class="apa">
+                            <td>Surse de apa:</td>
+                            <td><span class="val-apa"><%- traseu.apa %></span></td>
+                        </tr>
+                    </table>
+
+                    
+                   <!-- <p>Durata: <span class="durata"><%- traseu.durata%></span></p>
+                    <p>Marcaj: <span class="marcaj"><%-traseu.marcaj %></span></p>
+                    <p>Atractii: <span class="atractii"><%- traseu.atractii %></span></p>
+                    <p>Prima parcurgere: <span class="data"><%- traseu.prima_parcurgere %></span></p>
+                    <p>Surse de apa pe traseu: <span class="apa"><%- traseu.apa %></span></p> -->
+                    <img src="/resurse/Images/imagini-trasee/<%-traseu.imagine %>"  alt="imagine <%-traseu.imagine%>" />
+                </div>
+                <p class="descriere">Descriere: <span class="val-descriere"><%- traseu.descriere %></span></p>
+                <!--<p>Face parte din:<span> <%- traseu.locatie %></span></p>-->
+                </article>
+                
+            <%} %>
+            </section>
+        </div>
+        </main>
+    </body>
+
+    <%- include("../fragmente/footer") %>
+
+
+</html>

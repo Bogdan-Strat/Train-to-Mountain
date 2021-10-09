@@ -1,0 +1,35 @@
+{
+  "name": "proiect",
+  "version": "1.0.0",
+  "description": "Site ce cuprinde diverse trasee montane din Romania ",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "drumetie",
+    "trasee",
+    "montane",
+    "munte"
+  ],
+  "author": "Bogdan Valentin Strat",
+  "license": "ISC",
+  "dependencies": {
+    "@thuoe/mp4-video-player": "^3.0.1",
+    "child_process": "^1.0.2",
+    "crypto": "^1.0.1",
+    "css": "^3.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "formidable": "^1.2.2",
+    "fs": "0.0.1-security",
+    "mp4": "^0.5.2",
+    "nodemailer": "^6.6.2",
+    "path": "^0.12.7",
+    "pg": "^8.6.0",
+    "route": "^0.2.5",
+    "sharp": "^0.28.2",
+    "url": "^0.11.0"
+  }
+}

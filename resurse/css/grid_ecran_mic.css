@@ -1,0 +1,13 @@
+@import "tabel_ecran_mic.css";
+
+html{
+    font-size:11px;
+}
+
+body{
+    padding: 0px;
+}
+
+#grid-pagina{
+    display:block;
+}

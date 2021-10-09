@@ -1,0 +1,58 @@
+@import "schema_cromatica.css";
+
+#tabel{
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+#container{
+    border-radius: 5%;
+    border: 1px solid var(--culoare_border);
+    overflow: hidden;
+}
+
+#program_saptamanal{
+    counter-reset: nr_drumetii;
+    text-align: center;
+    
+}
+#program_saptamanal tbody tr{
+    counter-increment: nr_drumetii;
+}
+
+#program_saptamanal tbody tr:nth-child(8){
+    
+    counter-reset: nr_drumetii;
+}
+
+#program_saptamanal td, #program_saptamanal th{
+    border: 1px solid var(--culoare_border);
+    padding: 0.2rem;
+}
+
+#program_saptamanal{
+    border-collapse: collapse;
+
+}
+
+#program_saptamanal thead tr{
+    background-color: var(--culoare_highlight);
+}
+
+#program_saptamanal tbody tr:nth-child(even){
+    background-color: var(--culoare_highlight);
+}
+
+#program_saptamanal tbody tr:nth-child(odd) {
+    background-color: var(--culoare_text);
+}
+
+#program_saptamanal tbody tr:hover{
+    background-color:  white;
+}
+
+
+#program_saptamanal tr td:first-child::before{
+    content: counter(nr_drumetii);
+}

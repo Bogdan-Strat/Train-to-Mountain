@@ -1,0 +1,77 @@
+<header>
+    <h1>Pe Acoperisul Romaniei</h1>
+    
+    <% if(!locals.utilizator){ %>
+        <p>Va rugam sa va logati:</p>
+        <form id="login" method="post" action="/login">
+            <label>
+                Username: <input type="text" name="username" value="">
+            </label>
+            <label>
+                Parola: <input type="password" name="parola" value="">
+            </label>
+
+            <input type="submit" value="Login">
+        </form>
+ <%   }
+ else{ %>
+    <p title="<%-locals.utilizator.nume %> <%-locals.utilizator.prenume %> <%-locals.utilizator.rol %>">User: <%-locals.utilizator.username %></p>
+    <button><a href="/logout">Logout</a></button>
+    <%}  %>
+ 
+ <button  id="schimbare-tema"><img src="/resurse/Images/dark-theme-icon.png" width="20" height="auto" id="imagine"></button>
+</header>
+
+<nav>
+    <label id="hamburger" for="ch-menu">
+        <img src="/resurse/Images/hamburger_menu_icon.jpg" alt="meniu">
+    </label>
+    <input id="ch-menu" type="checkbox">
+    <ul class="meniu">
+        <li><div><span id="iconita_ecran_mediu_mic_da">Acasa</span>
+            <span class="material-icons-outlined">
+                home
+                </span>
+            </div>
+            <ul>
+                <li><a href="#welcome">Bine ai venit!</a></li>
+                <li><a href="#tabel">Program</a></li>
+                <li><a href="#informatii">Recomandari</a></li>
+            </ul>
+        </li>
+                <% if(!locals.utilizator) { %>
+                <li><a href="/inregistrare">Inregistrare</a></li>
+            <% }  %>
+        <li><div>Despre noi</div>
+            <ul>
+                <li><a href="/index/noi">Cine suntem?</a></li>
+                <li><a href="Scop.html">Scop</a></li>
+                <li><a href="Motivatie.html">Motivatie</a></li>
+            </ul>
+        </li>
+        <li><div>Trasee</div>
+            <ul>
+                <li><a href="/trasee">Toate</a></li>
+              <li><a href="/trasee?locatie=Carpatii Orientali">Carpatii Orientali</a></li>
+                <li><a href="/trasee?locatie=Carpatii Meridionali">Carpatii Meridionali</a></li>
+                <li><a href="/trasee?locatie=Carpatii Occidentali">Carpatii Occidentali</a></li>
+                <li><a href="/trasee?locatie=Muntii Macin">Muntii Macin</a></li>
+                  <!--< % for(let traseu of locals.trasee){ % >
+                    <li><a href="/trasee?locatie=< %- traseu.locatie %>">< %-traseu.locatie %></a></li>
+
+                    < %} % >-->
+                    <li>abcd<%- locals.trasee %></li>
+            </ul>
+        </li>
+        <li><div>Recomandari</div>
+            <ul>
+                <li>Cum ma echipez corect pentru o drumetie?</li>
+                <li>Cum imi aleg traseul potrivit?</li>
+                <li>Ce trebuie sa stiu inainte sa plec intr-o drumetie?</li>
+            </ul>
+        </li>
+        <% if (locals.utilizator && locals.utilizator.rol=="admin") { %> 
+            <li><a href="/useri">Utilizatori</a></li>
+            <% } %>
+    </ul>
+</nav>

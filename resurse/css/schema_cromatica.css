@@ -1,0 +1,18 @@
+
+body{
+    --culoare_background:rgb(72,250,104,98);
+    --culoare_text:rgb(113,235,184,92);
+    --culoare_border:rgb(89,201,48,79);
+    --culoare_highlight:rgb(198,242,58,95);
+}
+
+body .dark{
+    --culoare_background:rgb(40,89,21,35);
+    --culoare_text:rgb(68,153,37,60);
+    --culoare_border:rgb(28,64,15,25);
+    --culoare_highlight:rgb(45,102,24,40);
+}
+body{
+    padding: 3rem;
+    padding: 4%;
+}

@@ -1,0 +1,12 @@
+#iconita_ecran_mediu_mic_da{
+	display: none;
+}
+
+.material-icons-outlined{
+	display: contents;
+	align-items: center;
+	height: var(--inaltime-meniu);
+	line-height: var(--inaltime-meniu);
+}
+
+

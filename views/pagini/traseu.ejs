@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <meta name="keywords" content="drumetie,trasee montane,munte">
+        <meta name="description" content="Diverse trasee montane din Romania, dar nu numai">
+        <title><%- traseu.nume%></title>
+
+        <%- include("../fragmente/head") %>
+        <link rel="stylesheet" href="/resurse/css/grid-traseu.css" type="text/css" />
+    </head>
+
+    <body>
+        <%- include("../fragmente/header") %>
+
+        <main>
+            <section>
+                <h3>Trasee</h3>
+               
+                <article id="traseu">
+                    <h4>Nume: <a  href="/trasee/<%- traseu.id %>"><%- traseu.nume%></a></h4>
+                    <div id="asezare-traseu">
+                    <table>
+                        <tr>
+                            <td>Durata:</td>
+                            <td><%- traseu.durata%> ore</td>
+                        </tr>
+                        <tr>
+                            <td>Distanta:</td>
+                            <td><%- traseu.distanta %></td>
+                        </tr>
+
+                        <tr>
+                            <td>Marcaj:</td>
+                            <td><%-traseu.marcaj %></td>
+                        </tr>
+
+                        <tr>
+                            <td>Atractii:</td>
+                            <td><%- traseu.atractii %></td>
+                        </tr>
+                        <tr>
+                            <td>Dificultate:</td>
+                            <td><%- traseu.dificultate %></td>
+                        </tr>
+                        <tr>
+                            <td>Prima parcurgere:</td>
+                            <td><time><%- traseu.prima_parcurgere %></time></td>
+                        </tr>
+
+                        <tr>
+                            <td>Surse de apa:</td>
+                            <td><%- traseu.apa %></td>
+                        </tr>
+                    </table>
+
+                    
+                   <!-- <p>Durata: <span class="durata"><%- traseu.durata%></span></p>
+                    <p>Marcaj: <span class="marcaj"><%-traseu.marcaj %></span></p>
+                    <p>Atractii: <span class="atractii"><%- traseu.atractii %></span></p>
+                    <p>Prima parcurgere: <span class="data"><%- traseu.prima_parcurgere %></span></p>
+                    <p>Surse de apa pe traseu: <span class="apa"><%- traseu.apa %></span></p> -->
+                    <img src="/resurse/Images/imagini-trasee/<%-traseu.imagine %>"  alt="imagine <%-traseu.imagine%>" />
+                </div>
+                <p>Descriere: <%- traseu.descriere %></p>
+                </article>
+                <br>
+            </section>
+        </main>
+    </body>
+
+    <%- include("../fragmente/footer") %>
+
+
+</html>

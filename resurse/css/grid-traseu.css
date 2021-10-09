@@ -1,0 +1,25 @@
+/*#grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr) ;
+}*/
+#asezare-traseu{
+    display: flex;
+}
+
+.traseu{
+    border:2px solid var(--culoare_border);
+    border-radius: 1%;
+   /* border-color: var(--culoare-border);*/
+   padding: 0.4 rem;
+   /*background-color: var(--culoare_background);*/
+   margin:0 auto;
+   width: 70%;
+}
+
+img{
+    width:25%; height:auto;
+}
+
+article{
+    margin-bottom: 2rem;
+}

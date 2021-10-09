@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <meta name="keywords" content="drumetie,trasee montane,munte">
+        <meta name="description" content="Diverse trasee montane din Romania, dar nu numai">
+        <title>Inregistrare</title>
+
+        <%- include("../fragmente/head") %>
+        <script type="text/javascript" src="/resurse/js/inregistare.js"></script>
+    </head>
+
+    <body>
+        <%- include("../fragmente/header") %>
+
+        <main>
+            <section>
+                <h2>Formular inregistrare</h2>
+                <% if(locals.err !=""){  %>
+                    <form id="form_inreg" method="post" class="date" action="/inreg" id="inregistrare" enctype="multipart/form-data">
+                        <p>
+                            <label>Username:
+                                <input id="usr" type="text" name="username" value="prof<%=Math.floor(Math.random()*10000) %>" required pattern="[A-Za-z0-9]+">
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                Nume: <input id="name"type="text" name="nume" value="Gogu">
+                            </label>
+                        </p>
+                        <label>
+                            Prenume: <input id="surname" type="text" name="prenume" value="Gogu">
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Parola: <input id="parl" type="password" name="parola" value="">
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Reintroduceti parola: <input id="rparl" type="password" name="rparola" value="">
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Email: <input id="mail" type="text" name="email" value="site.trasee.montane2021@gmail.com"  size="50">
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Poza: <input type="file" name="poza">
+                        </label>			
+                    </p>
+                    <p>		
+                        <input type="submit" value="Trimite">
+                        <input type="reset" value="Reseteaza">
+                    </p>
+                </form>
+            <% } %>
+            <% if(locals.raspuns) { %>
+            <%- locals.raspuns+"<br/>"%>
+            <% } %>
+            <% if(locals.err) { %>
+            <%- locals.err %>
+            <% } %>
+                    </form>
+
+                }
+            </section>
+        </main>
+    </body>
+
+    <%- include("../fragmente/footer") %>
+
+
+</html>

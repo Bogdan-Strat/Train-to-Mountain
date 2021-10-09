@@ -1,0 +1,50 @@
+#hamburger {
+	display: block;
+}
+
+ul.meniu {
+	display: none;
+	position: absolute;
+	width: 100%;
+}
+
+#ch-menu:checked + ul.meniu {
+	display: block;
+}
+
+nav ul.meniu li {
+	
+	width: 100%;
+}
+
+nav ul.meniu div{
+
+	animation: animatie 1s linear;
+	animation-fill-mode: forwards;
+}
+
+nav ul.meniu li div{
+	text-shadow: 0px -10px transparent;
+	transition: text-shadow 1s linear;
+}
+
+nav ul.meniu div:hover{
+
+  text-shadow: 0px 0px transparent;
+  
+}
+nav ul.meniu > li ul {
+	position: absolute;
+	width: 100%;
+	z-index: 20;
+}
+
+#iconita_ecran_mediu_mic_da{
+	display: none;
+}
+
+
+@keyframes animatie{
+	0%{letter-spacing: -5px;}
+	100%{letter-spacing: 2px;}
+}

@@ -1,0 +1,161 @@
+@import "schema_cromatica.css";
+@import "banner.css";
+@import "tabel_ecran_mare_mediu.css";
+html{
+    font-size: 16px;
+}
+
+body{
+    margin-top: 0;
+    margin-bottom: 0;
+    --body-padding: 3rem;
+    --padding-intern: 4%;
+
+    background-image: linear-gradient(transparent, transparent 30%, white 50%, transparent 70%, transparent),
+                      url("../Images/background_image.jpg");
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+
+    background-size: cover;
+    padding-left: var(--body-padding);
+    padding-right: var(--body-padding);
+    padding-top: 0;
+    padding-bottom: 0;
+
+    min-width: 330px;
+}
+
+body.dark{
+    margin-top: 0;
+    margin-bottom: 0;
+    --body-padding: 3rem;
+    --padding-intern: 4%;
+
+    --culoare_background:rgb(40,89,21,35);
+    --culoare_text:rgb(68,153,37,60);
+    --culoare_border:rgb(28,64,15,25);
+    --culoare_highlight:rgb(45,102,24,40);
+    
+    padding-left: var(--body-padding);
+    padding-right: var(--body-padding);
+    padding-top: 0;
+    padding-bottom: 0;
+
+    min-width: 330px;
+
+    background-image: linear-gradient(transparent, transparent 30%, white 50%, transparent 70%, transparent),
+                      url("../Images/background-image-dark.jpg");
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+
+    background-size: cover;
+
+    /*text-shadow:0px 0px 2px black,0px 0px 1px black,0px 0px 1px black;*/
+}
+main{
+    --main-border: 1px solid grey;
+    background: rgba(255,255,255,0.7);
+
+    border-left: var(--main-border);
+    border-right: var(--main-border);
+}
+
+h1{
+    font-family: 'Merriweather Sans', sans-serif;
+}
+#grid-pagina{
+    display:grid;
+    grid-template-areas: "welcome welcome welcome welcome"
+                         "welcome welcome welcome welcome"
+                         "calendar tabel tabel anunturi"
+                         "informatii informatii informatii informatii"
+                         "informatii informatii informatii informatii"
+                         "date_site_server date_site_server lista_utilizatori_online utilizator_statistici";
+    padding: var(--padding-intern);
+    grid-gap: 2rem;
+}
+
+#grid-pagina section{
+    outline: 1px solid skyblue;
+    padding: 1rem;
+}
+
+#grid-pagina>figure{
+    width: 100%;
+}
+
+figure{
+    margin:0;
+    padding: 0;
+}
+
+figure img{
+    width: 100%;
+}
+
+#welcome{
+    grid-area: welcome;
+}
+
+#calendar{
+    grid-area: calendar;
+}
+#tabel{
+    grid-area: tabel;
+}
+
+#anuturi{
+    grid-area: anunturi;
+}
+
+#informatii{
+    grid-area: informatii;
+}
+
+#date_site_server{
+    grid-area:date_site_server;
+}
+
+#lista_utilizatori_online{
+    grid-area: lista_utilizatori_online;
+}
+
+#utilizator_statistici{
+    grid-area: utilizator_statistici;
+}
+
+footer{
+    background-color: green;
+    color: white;
+    padding-left: var(--padding-intern);
+    padding-right: var(--padding-intern);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.material-icons-outlined{
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }

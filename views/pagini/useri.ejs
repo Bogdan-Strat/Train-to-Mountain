@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <meta name="keywords" content="drumetie,trasee montane,munte">
+        <meta name="description" content="Diverse trasee montane din Romania, dar nu numai">
+        <title>Useri</title>
+
+        <%- include("../fragmente/head") %>
+    </head>
+
+    <body>
+        <%- include("../fragmente/header") %>
+
+        <main>
+            <section>
+                <h2>Userii</h2>
+                <table id="useri">
+                    <tr>
+                        <th>Username</th>
+                        <th>Nume</th>
+                        <th>Prenume</th>
+                        <th>Blocat</th>
+                        <th>Actiuni</th>
+                    </tr>
+
+                    <% for(var i=0;i<useri.length;i++){ 
+                         if(useri[i].rol="comun"){ %>
+                        <tr>
+                            <td><%- useri[i].username %></td>
+                            <td><%- useri[i].nume %></td>
+                            <td><%- useri[i].prenume %></td>
+                            <td><%- useri[i].blocat %></td>
+                           <% if(useri[i].blocat){ %>
+                                <td>
+                                    <form id="deblocheaza" method="post" action="/deblocheaza_utiliz">
+                                        <label>
+                                            <input type="hidden" name="id_utiliz" value="<%- useri[i].id %>">
+                                        </label>
+                                        <input type="submit" value="Deblocheaza">
+                                    </form>
+                                </td>
+                            <% }
+                            else{ %>
+                                <td>
+                                    <form id="blocheaza" method="post" action="/blocheaza_utiliz">
+                                       <label>
+                                           <input type="hidden" name="id_utiliz" value="<%- useri[i].id %>">
+                                       </label>
+                                        <input type="submit" value="Blocheaza">
+                                    </form>
+                                </td>
+                            <%} %>
+                        </tr>
+                        <% } %>
+                   <% } %>
+                </table>
+            </section>
+        </main>
+    </body>
+
+    <%- include("../fragmente/footer") %>
+
+
+</html>
